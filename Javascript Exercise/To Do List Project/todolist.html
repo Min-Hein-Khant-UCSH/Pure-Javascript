@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<input type="text" id="text">
+			<button id="addBtn" onclick="addBtn()">Add</button>
+		</div>
+	<ul id="textList">
+	</ul>
+	</div>
+	<script type="text/javascript">
+		let text=document.querySelector("#text");
+		let textList=document.querySelector("#textList");
+		let mintext=3;
+		let i=1;
+		function deleteList(a) {
+			// body...
+			let current=document.querySelector(`#List${a}`);
+			let currentText=document.querySelector(`#listText${a}`).innerHTML;
+			let confirmdel=confirm(`Are u sure you want to delete '${currentText}'?`);
+			if(confirmdel){
+				textList.removeChild(current);
+				console.log("Successfully Deleted");
+			}
+			else
+			{
+				console.log("sorry");
+			}
+			
+		}
+		function editList(b) {
+			// body...
+			// let current=document.querySelector(`#List${b}`);
+			let currentText=document.querySelector(`#listText${b}`);
+			let wkwk=prompt("Say Something",currentText.innerHTML);
+			if(textFilter(wkwk))
+			{
+				currentText.innerHTML=wkwk;
+			}
+
+		}
+		function showList(y) {
+			// body...
+			textList.innerHTML += ` 
+			<li id="List${i}">
+			<button id="ListDel" onclick="deleteList(${i})">Delete</button>
+			<button id="ListEdit" onclick="editList(${i})">Edit</button>
+			<span id="listText${i}">${y}</span>
+			</li>
+
+			`;
+			i++;
+
+		}
+
+		function textFilter(x) {
+			// body...
+			if(x)
+			{
+				if(x.length>=mintext){
+					return x;
+				}
+				else
+				{
+					alert("Min text is 3");
+					return false;
+				}
+				
+			}
+			else
+			{
+				alert("Empty text");
+				return false;
+			}
+		}
+		function addBtn() {
+			// body...
+			let textValue=textFilter(text.value);
+			if(textValue)
+			{
+			showList(textValue);
+			text.value="";
+			}
+			
+		}
+	</script>
+</body>
+</html>

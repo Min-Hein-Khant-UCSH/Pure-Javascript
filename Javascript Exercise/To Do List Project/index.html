@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List</title>
+</head>
+<body>
+	<h1>To Do List</h1>
+	<div class="todo">
+		<div class="add-box" id="addBox">
+			<input type="text" id="input">
+			<button id="addBtn" class="btn btn-add" onclick="addList()">Add</button>
+		
+	</div>
+	<ul class="list" id="list">
+	</ul>
+	</div>
+	<script type="text/javascript">
+		let input=document.querySelector("#input");
+		let list=document.querySelector("#list");
+		let minTextLength=3;
+		let i=1;
+		function editList(listId) {
+			// body...
+			let current=document.querySelector(`#listText${listId}`);
+			let newText=prompt("Say Something",current.innerHTML);
+			if(textFilter(newText))
+			{
+				current.innerHTML=newText;
+			}
+			
+			
+
+
+		}
+		function deleteList(listId) {
+			// body...
+			let current=document.querySelector(`#list${listId}`);
+			let currentText=document.querySelector(`#listText${listId}`).innerHTML;
+			let deleteConfirm=confirm(`Are you sure you want to delete '${currentText}'?`);
+			if(deleteConfirm){
+				
+				list.removeChild(current);
+			}
+			else
+			{
+				console.log("Cancel");
+			}
+		}
+		function showList(text) {
+			// body...
+			list.innerHTML+= `<li class="list-item" id="list${i}">
+			<button class="btn btn-del" onclick="deleteList(${i})">Delete</button>
+			<button class="btn btn-edit" onclick="editList(${i})">Edit</button>
+			<span id="listText${i}">${text}</span>	
+			</li>`;
+			i++;
+		}
+		function textFilter(x) {
+			// body...
+			if(x)
+			{
+				if(x.length >= minTextLength)
+				{
+				 return x;	
+				}
+				else
+				{
+					alert("Min Text Length is 3");
+					return false;
+				}
+				
+			}
+			else
+			{
+				alert("Input Text is empty");
+				return false;
+			}
+		}
+		function addList() {
+			// body...
+			let inputText=textFilter(input.value);
+			//alert(inputText);
+			if(inputText)
+			{
+
+
+			showList(inputText);
+			input.value="";
+		}
+		}
+	</script>
+</body>
+</html>

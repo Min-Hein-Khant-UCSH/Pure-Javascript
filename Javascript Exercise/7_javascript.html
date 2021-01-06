@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bulb On Off Software</title>
+</head>
+<body>
+	<img src="pic_bulboff.gif" alt="">
+	<button onclick="on()">Button</button>
+	<!-- <button onclick="off()">Off</button> -->
+	<script type="text/javascript">
+		// let img=document.querySelector("img");
+		// function on() {
+		// 	img.src="pic_bulbon.gif";
+		// }
+		// function off() {
+		// img.src="pic_bulboff.gif";	
+		// }
+		function on() {
+			let img=document.querySelector("img");
+			let arr=img.src.split('/');
+			//console.log(arr);
+			if(arr[arr.length-1]=="pic_bulboff.gif")
+			{
+				img.src="pic_bulbon.gif";
+				console.log("ON");
+			}
+			else
+
+			{
+				img.src="pic_bulboff.gif";
+				console.log("OFF");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mini Software</title>
+	<style>
+		*
+		{
+			box-sizing: border-box;
+		}
+		h1
+		{
+			border:2px solid black;
+			padding: 20px;
+		}
+		div
+		{
+			margin-bottom: 20px;
+		}
+		input
+		{
+			width: 500px;
+			margin-right: 5px;
+			height: 50px;
+			border-radius: 5px;
+		}
+		button
+		{
+			width: 100px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="result"></h1>
+	<div>
+		<input type="text" id="text" onkeyup="text()">
+		<button id="setText">Set Text</button>
+	</div>
+	<div>
+		<input type="color" id="color" onchange="color()">
+		<button id="setColor">Set Color</button>
+	</div>
+	<div>
+		<input type="number" id="fontSize" onkeyup="fontSize()">
+		<button id="setFontsize">Set FontSize</button>
+	</div>
+	<script type="text/javascript">
+		//SetText
+		document.querySelector("#setText").onclick=function() {
+			let text=document.querySelector("#text").value;
+			document.querySelector("#result").innerHTML=text;
+			document.querySelector("#text").value="";
+		}
+		// //SetColor
+		 document.querySelector("#setColor").onclick=function(){
+		 let color=document.querySelector("#color").value;
+		 document.querySelector("#result").style.color=color;
+		 }
+		 //SetFontSize
+		 document.querySelector("#setFontsize").onclick=function(){
+		 let size=document.querySelector("#fontSize").value;
+		 document.querySelector("#result").style.fontSize=size+"px";
+		 }
+		 function text() {
+		 let text=document.querySelector("#text").value;
+		document.querySelector("#result").innerHTML=text;
+			}
+		function color() {
+		let color=document.querySelector("#color").value;
+		 document.querySelector("#result").style.color=color;
+		}
+		function fontSize() {
+		let size=document.querySelector("#fontSize").value;
+		 document.querySelector("#result").style.fontSize=size+"px";
+		}
+	</script>
+</body>
+</html>

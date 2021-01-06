@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<p>Please input guessing number</p>
+
+<h1></h1>
+<input type="text" onkeyup="wtf()">
+<button>Click</button>
+<script type="text/javascript">
+	let guess_num=5;
+	let wkwk;
+	
+	document.querySelector("button").onclick=function()
+	{
+		let input_val=document.querySelector("input").value;
+		if(input_val==guess_num)
+	{
+       wkwk="You are amazing Guessing";
+	}
+	else if(input_val==null)
+	{
+		wkwk="You are Blank";	
+	}
+	else
+	{
+		wkwk="Not Guessing";
+	}
+	document.querySelector("h1").innerHTML=wkwk;
+	document.querySelector("input").value="";
+	}
+	function wtf() {
+		let input_val=document.querySelector("input").value;
+		if(input_val==guess_num)
+	{
+       wkwk="You are amazing Guessing";
+	}
+	else if(input_val==null)
+	{
+		wkwk="You are Blank";	
+	}
+	else
+	{
+		wkwk="Not Guessing";
+	}
+	document.querySelector("h1").innerHTML=wkwk;
+		
+	}
+	
+
+
+
+	
+
+
+</script>
+</body>
+</html>

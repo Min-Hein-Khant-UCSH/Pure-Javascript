@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<style type="text/css">
+	#red
+	{
+		width: 80px;
+		height: 50px;
+		border-radius: 12px;
+		border: 2px solid red;
+		background-color: red;
+		color: white;
+	}
+	#pink
+	{
+		width: 80px;
+		height: 50px;
+		border-radius: 12px;
+		border: 2px solid pink;
+		background-color: pink;
+		color: white;
+	}
+	#blue
+	{
+		width: 80px;
+		height: 50px;
+		border-radius: 12px;
+		border: 2px solid blue;
+		background-color: blue;
+		color: white;
+	}
+	#green
+	{
+		width: 80px;
+		height: 50px;
+		border-radius: 12px;
+		border: 2px solid green;
+		background-color: green;
+		color: white;
+	}
+	#yellow
+	{
+		width: 80px;
+		height: 50px;
+		border-radius: 12px;
+		border: 2px solid yellow;
+		background-color: yellow;
+		color: white;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<button id="red">red</button>
+				<button id="pink">pink</button>
+				<button id="blue">blue</button>
+				<button id="green">green</button>
+				<button id="yellow">yellow</button>
+						</div>
+			<div class="col-md-3">
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript">
+		let body=document.querySelector("body");
+		let red=document.querySelector("#red");
+		let pink=document.querySelector("#pink");
+		let blue=document.querySelector("#blue");
+		let green=document.querySelector("#green");
+		let yellow=document.querySelector("#yellow");
+
+		red.onclick=function() {
+			// body...
+			body.style.backgroundColor="red";
+
+		}
+		pink.onclick=function() {
+			// body...
+			body.style.backgroundColor="pink";
+		}
+		blue.onclick=function() {
+			// body...
+			body.style.backgroundColor="blue";
+		}
+		green.onclick=function() {
+			// body...
+			body.style.backgroundColor="green";
+		}
+		yellow.onclick=function() {
+			// body...
+			body.style.backgroundColor="yellow";
+		}
+	
+	</script>
+	<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
+

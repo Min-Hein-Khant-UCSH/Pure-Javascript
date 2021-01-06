@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button>Click</button>
+	<script type="text/javascript">
+		// function one() {
+		// 	console.log("Hello");
+		// }
+
+		let one=()=>console.log("hello");
+
+		// function two() {
+		// 	let x = "wkwk";
+		// 	console.log(x);
+		// }
+		let two=()=>{
+			let x = "wkwk";
+			console.log(x);
+		}
+		// function three(x) {
+		// 	// body...
+		// 	console.log(x);
+		// }
+		let three=x=>console.log(x);
+
+		// function four(x,y=1) {
+		// 	console.log({x,y});
+		// }
+		let four=(x,y=1)=>console.log({x,y});
+
+		// document.querySelector("button").addEventListener('click',function() {
+		// 	// body...
+		// 	console.log("This is Five Function");
+		// });
+		document.querySelector("button").addEventListener('click',()=>{
+			console.log("This is Five Function");
+		});
+
+
+		//IIFE
+		// (function() {
+		// 	console.log("This is IIFE function");
+		// })();
+
+		(()=>console.log("This is IIFE function"))();
+
+
+		let obj={
+			name:"Min Hein Khant",
+			teach:function(){
+				console.log(`My name is ${this.name}`);
+			},
+			learn:()=>console.log(`${obj.name} can learn web design`),
+			
+
+		};
+	</script>
+</body>
+</html>
